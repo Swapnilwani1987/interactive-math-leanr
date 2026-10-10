@@ -1,0 +1,15 @@
+{
+  "name": "interactive-math-learn",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "MathPlay Lab - interactive, play-to-learn mathematics animations",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.4.4"
+  }
+}

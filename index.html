@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="MathPlay Lab: learn maths by playing with interactive animations of trigonometry, Pythagoras and the area of a circle." />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <title>MathPlay Lab</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#labs">Skip to the labs</a>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="MathPlay Lab home">
+          <span class="brand-mark" aria-hidden="true">π</span>
+          <span>MathPlay<span class="accent"> Lab</span></span>
+        </a>
+        <nav aria-label="Labs">
+          <a href="#lab-trig">Unit circle</a>
+          <a href="#lab-pyth">Pythagoras</a>
+          <a href="#lab-circle">Circle area</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <p class="eyebrow">Interactive maths, no formulas to memorise first</p>
+            <h1>Don't just read maths.<br /><span class="highlight">Play with it.</span></h1>
+            <p class="lede">
+              Drag, slide and replay three animated labs that show <em>why</em> the big ideas work —
+              so the formula is the last thing you learn, not the first.
+            </p>
+            <div class="hero-cta">
+              <a class="btn primary lg" href="#labs">Start playing</a>
+              <a class="btn ghost lg" href="#how">How it works</a>
+            </div>
+            <ul class="hero-facts">
+              <li><strong>3</strong> hands-on labs</li>
+              <li><strong>0</strong> sign-ups</li>
+              <li>Phone, tablet &amp; projector ready</li>
+            </ul>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit">
+              <div class="orbit-ring"></div>
+              <div class="orbit-arm"><span class="orbit-dot"></span></div>
+              <span class="orbit-center">π</span>
+            </div>
+            <span class="formula f1">a² + b² = c²</span>
+            <span class="formula f2">sin²θ + cos²θ = 1</span>
+            <span class="formula f3">A = πr²</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- LAB CARDS -->
+      <section id="labs" class="section">
+        <div class="container">
+          <h2 class="section-title">Pick a lab</h2>
+          <p class="section-sub">Each lab is a small playground. Press play, then break things on purpose.</p>
+          <div class="cards">
+            <a class="card" href="#lab-trig">
+              <span class="card-num">01</span>
+              <span class="chip">Trigonometry</span>
+              <h3>The Unit Circle &amp; the Sine Wave</h3>
+              <p>Spin a point around a circle and watch its height draw the sine wave in real time.</p>
+              <span class="card-link">Open lab →</span>
+            </a>
+            <a class="card" href="#lab-pyth">
+              <span class="card-num">02</span>
+              <span class="chip">Geometry</span>
+              <h3>Pythagoras, Proved by Sliding</h3>
+              <p>Move four triangles inside a square and see c² turn into a² + b² — no algebra needed.</p>
+              <span class="card-link">Open lab →</span>
+            </a>
+            <a class="card" href="#lab-circle">
+              <span class="card-num">03</span>
+              <span class="chip">Measurement</span>
+              <h3>Why a Circle's Area is πr²</h3>
+              <p>Slice a circle like a pizza and unroll it into an almost-rectangle. More slices, better fit.</p>
+              <span class="card-link">Open lab →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how" class="section how">
+        <div class="container">
+          <h2 class="section-title">Learn in three moves</h2>
+          <ol class="steps">
+            <li><span class="step-num">1</span><h3>Play</h3><p>Hit play and just watch. Guess what will happen next.</p></li>
+            <li><span class="step-num">2</span><h3>Tweak</h3><p>Drag the dot, move the sliders, change one thing at a time.</p></li>
+            <li><span class="step-num">3</span><h3>Notice</h3><p>Use the live numbers and the “Try this” prompts to spot the pattern.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- LAB 1: UNIT CIRCLE -->
+      <section id="lab-trig" class="section lab" aria-labelledby="lab-trig-title">
+        <div class="container">
+          <header class="lab-head">
+            <span class="chip">Lab 01 · Trigonometry · Ages 14+</span>
+            <h2 id="lab-trig-title">The Unit Circle &amp; the Sine Wave</h2>
+            <p>A point travels around a circle of radius 1. Its <span class="y">height is sin θ</span> and its
+              <span class="w">horizontal distance is cos θ</span>. Plot the height against the angle and you get a wave.</p>
+          </header>
+
+          <div class="lab-body">
+            <div class="stage">
+              <canvas data-el="canvas" class="touch-none" role="img" aria-label="Unit circle with a point at angle theta, and the sine curve traced to the right"></canvas>
+            </div>
+            <aside class="controls" aria-label="Unit circle controls">
+              <div class="btn-row">
+                <button class="btn primary" data-el="play" aria-pressed="false">Play</button>
+                <button class="btn" data-el="reset">Reset</button>
+              </div>
+              <label class="field">
+                <span class="field-label">Angle θ <output data-el="angle-out">30°</output></span>
+                <input type="range" data-el="angle" min="0" max="359" step="1" value="30" />
+              </label>
+              <label class="field">
+                <span class="field-label">Speed <output data-el="speed-out">60°/s</output></span>
+                <input type="range" data-el="speed" min="10" max="180" step="5" value="60" />
+              </label>
+              <div class="quick">
+                <span class="field-label">Special angles</span>
+                <div class="pill-row">
+                  <button class="pill" data-angle="30">30°</button>
+                  <button class="pill" data-angle="45">45°</button>
+                  <button class="pill" data-angle="60">60°</button>
+                  <button class="pill" data-angle="90">90°</button>
+                  <button class="pill" data-angle="180">180°</button>
+                  <button class="pill" data-angle="270">270°</button>
+                </div>
+              </div>
+              <label class="toggle"><input type="checkbox" data-el="show-cos" /> <span>Also draw the cosine wave</span></label>
+              <label class="toggle"><input type="checkbox" data-el="snap" /> <span>Snap drag to 15° steps</span></label>
+              <dl class="readout">
+                <div><dt>θ (degrees)</dt><dd data-el="r-deg">30°</dd></div>
+                <div><dt>θ (radians)</dt><dd data-el="r-rad">π/6</dd></div>
+                <div><dt class="y">sin θ</dt><dd data-el="r-sin">0.500</dd></div>
+                <div><dt class="w">cos θ</dt><dd data-el="r-cos">0.866</dd></div>
+                <div><dt>tan θ = sin ÷ cos</dt><dd data-el="r-tan">0.577</dd></div>
+              </dl>
+              <p class="status" data-el="r-quad">Quadrant I</p>
+            </aside>
+          </div>
+
+          <div class="notes">
+            <div class="note">
+              <h3>What's happening</h3>
+              <p>The radius is always 1, so the yellow leg (sin θ) and white leg (cos θ) form a right triangle with
+                hypotenuse 1. That's why <strong>sin²θ + cos²θ = 1</strong> for every angle.</p>
+            </div>
+            <div class="note">
+              <h3>Try this</h3>
+              <ul>
+                <li>Where is sin θ biggest? Where is it zero?</li>
+                <li>Turn on the cosine wave. It's the same shape — shifted by how many degrees?</li>
+                <li>Click 90°. Why does tan θ become “undefined”?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LAB 2: PYTHAGORAS -->
+      <section id="lab-pyth" class="section lab" aria-labelledby="lab-pyth-title">
+        <div class="container">
+          <header class="lab-head">
+            <span class="chip">Lab 02 · Geometry · Ages 12+</span>
+            <h2 id="lab-pyth-title">Pythagoras, Proved by Sliding</h2>
+            <p>For any right triangle, the square on the longest side equals the other two squares added together.
+              Change the triangle on the left, then play the proof on the right.</p>
+          </header>
+
+          <div class="lab-body">
+            <div class="stage twin">
+              <figure>
+                <div class="canvas-wrap"><canvas data-el="squares" role="img" aria-label="Right triangle with a square drawn on each side"></canvas></div>
+                <figcaption>Squares on each side (count the little unit squares!)</figcaption>
+              </figure>
+              <figure>
+                <div class="canvas-wrap"><canvas data-el="proof" role="img" aria-label="Four copies of the triangle rearranged inside a large square"></canvas></div>
+                <figcaption>Four copies of the triangle in an (a + b) square</figcaption>
+              </figure>
+            </div>
+            <aside class="controls" aria-label="Pythagoras controls">
+              <div class="btn-row">
+                <button class="btn primary wide" data-el="play" aria-pressed="false">Play proof</button>
+              </div>
+              <label class="field">
+                <span class="field-label">Rearrange <output data-el="t-out">0%</output></span>
+                <input type="range" data-el="t" min="0" max="100" step="1" value="0" />
+              </label>
+              <label class="field">
+                <span class="field-label">Side a <output data-el="a-out">3</output></span>
+                <input type="range" data-el="a" min="1" max="12" step="1" value="3" />
+              </label>
+              <label class="field">
+                <span class="field-label">Side b <output data-el="b-out">4</output></span>
+                <input type="range" data-el="b" min="1" max="12" step="1" value="4" />
+              </label>
+              <div class="quick">
+                <span class="field-label">Famous triples</span>
+                <div class="pill-row">
+                  <button class="pill" data-triple="3,4">3–4–5</button>
+                  <button class="pill" data-triple="6,8">6–8–10</button>
+                  <button class="pill" data-triple="5,12">5–12–13</button>
+                  <button class="pill" data-triple="8,6">8–6–10</button>
+                </div>
+              </div>
+              <dl class="readout">
+                <div><dt class="y">a²</dt><dd data-el="r-a2">9</dd></div>
+                <div><dt class="w">b²</dt><dd data-el="r-b2">16</dd></div>
+                <div><dt>a² + b² = c²</dt><dd data-el="r-sum">25</dd></div>
+                <div><dt>c</dt><dd data-el="r-c">5</dd></div>
+              </dl>
+              <p class="status" data-el="r-triple"></p>
+            </aside>
+          </div>
+
+          <div class="notes">
+            <div class="note">
+              <h3>What's happening</h3>
+              <p>The big square and the four triangles never change size, so the yellow area left over can't change
+                either. At the start it's one tilted square, <strong>c²</strong>. After sliding, it's two squares,
+                <strong>a² + b²</strong>. Same area, so <strong>a² + b² = c²</strong>.</p>
+            </div>
+            <div class="note">
+              <h3>Try this</h3>
+              <ul>
+                <li>Count the unit squares in a² and b² on the left. Do they add up to c²?</li>
+                <li>Make a = b. What shape do the two yellow squares make?</li>
+                <li>Pause halfway with the slider. Is the yellow area still the same?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LAB 3: CIRCLE AREA -->
+      <section id="lab-circle" class="section lab" aria-labelledby="lab-circle-title">
+        <div class="container">
+          <header class="lab-head">
+            <span class="chip">Lab 03 · Measurement · Ages 11+</span>
+            <h2 id="lab-circle-title">Why a Circle's Area is πr²</h2>
+            <p>Cut a circle into equal slices and lay them top-to-tail. Half the crust goes on top, half on the bottom,
+              and the shape starts to look like a rectangle that is <strong>πr</strong> wide and <strong>r</strong> tall.</p>
+          </header>
+
+          <div class="lab-body">
+            <div class="stage">
+              <canvas data-el="canvas" role="img" aria-label="Circle cut into slices that unroll into a near-rectangle"></canvas>
+            </div>
+            <aside class="controls" aria-label="Circle area controls">
+              <div class="btn-row">
+                <button class="btn primary wide" data-el="play" aria-pressed="false">Unroll circle</button>
+              </div>
+              <label class="field">
+                <span class="field-label">Unroll <output data-el="t-out">0%</output></span>
+                <input type="range" data-el="t" min="0" max="100" step="1" value="0" />
+              </label>
+              <label class="field">
+                <span class="field-label">Number of slices <output data-el="n-out">8</output></span>
+                <input type="range" data-el="n" min="4" max="60" step="2" value="8" />
+              </label>
+              <label class="field">
+                <span class="field-label">Radius r <output data-el="r-out">4</output></span>
+                <input type="range" data-el="r" min="2" max="5" step="0.5" value="4" />
+              </label>
+              <dl class="readout">
+                <div><dt>Width</dt><dd data-el="r-width"></dd></div>
+                <div><dt>Height</dt><dd data-el="r-height"></dd></div>
+                <div><dt>Width × height</dt><dd data-el="r-approx"></dd></div>
+                <div><dt class="y">πr²</dt><dd data-el="r-exact"></dd></div>
+                <div><dt>How close?</dt><dd data-el="r-acc"></dd></div>
+              </dl>
+            </aside>
+          </div>
+
+          <div class="notes">
+            <div class="note">
+              <h3>What's happening</h3>
+              <p>The slices keep the circle's whole area. As you add slices, the bumpy edges flatten out: the width
+                approaches half the circumference (<strong>½ × 2πr = πr</strong>) and the height approaches
+                <strong>r</strong>. So area = πr × r = <strong>πr²</strong>.</p>
+            </div>
+            <div class="note">
+              <h3>Try this</h3>
+              <ul>
+                <li>Start with 4 slices. Does it look like a rectangle? Now try 60.</li>
+                <li>Watch “How close?” as you add slices. How many do you need for 99%?</li>
+                <li>Double the radius from 2.5 to 5. What happens to the area — ×2 or ×4?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="brand"><span class="brand-mark" aria-hidden="true">π</span> MathPlay Lab</span>
+        <p>Built for curious students and the teachers who project them on the board. © <span data-el="year"></span></p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
