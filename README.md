@@ -1,1 +1,1 @@
-# interactive-math-leanr
+# interactive-math-learn
