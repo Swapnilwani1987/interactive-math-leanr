@@ -12,6 +12,14 @@
       "type": "stdio",
       "command": "npx",
       "args": ["-y", "@playwright/mcp@0.0.83", "--headless", "--isolated"]
+    },
+    "chrome-devtools": {
+      "type": "stdio",
+      "command": "sh",
+      "args": [
+        "-c",
+        "exec npx -y chrome-devtools-mcp@1.12.0 --headless --isolated --usageStatistics=false --no-performance-crux ${CHROME_DEVTOOLS_MCP_EXECUTABLE_PATH:+--executablePath=\"$CHROME_DEVTOOLS_MCP_EXECUTABLE_PATH\" --chromeArg=--no-sandbox}"
+      ]
     }
   }
 }
